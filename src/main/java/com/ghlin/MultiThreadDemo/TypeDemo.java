@@ -1,3 +1,5 @@
+package com.ghlin.MultiThreadDemo;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 

@@ -1,3 +1,5 @@
+package com.ghlin.MultiThreadDemo;
+
 public class StaticSingletonDemo {
     private StaticSingletonDemo() {
         System.out.println("StaticSingletonDemo is created.");

@@ -1,4 +1,5 @@
-import java.util.concurrent.Executor;
+package com.ghlin.MultiThreadDemo;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;

@@ -1,3 +1,5 @@
+package com.ghlin.MultiThreadDemo;
+
 import java.util.concurrent.locks.ReentrantLock;
 
 public class DeadLockDemo implements Runnable{
