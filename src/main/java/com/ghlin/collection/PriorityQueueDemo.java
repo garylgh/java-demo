@@ -18,7 +18,7 @@ public class PriorityQueueDemo {
             System.out.print(qi.poll() + ",");
         }
 
-        System.out.println("-----------------------------");
+        System.out.println("\n-----------------------------");
 
         // ** 最大堆 **
         Comparator cmp = new Comparator<Integer>() {
