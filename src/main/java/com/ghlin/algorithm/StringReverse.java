@@ -2,6 +2,8 @@ package com.ghlin.algorithm;
 
 public class StringReverse {
     public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("aaa");
+        sb.charAt(0);
         String s = "abcdefgh";
         System.out.println(reverse(s));
     }
