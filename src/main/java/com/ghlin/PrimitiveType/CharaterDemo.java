@@ -14,6 +14,18 @@ public class CharaterDemo {
         System.out.println((int)c3);
         System.out.println(c3.hashCode());
 
+        char num1 = '1';
+        char num2 = '2';
 
+        System.out.println("num1 = " + num1);
+        System.out.println("num2 = " + num2);
+        int num3 = num1 + num2;
+        System.out.println("num3 = " + num3);
+        System.out.println(((int)(num1) + (int)num2));
+
+        int num1Int = Integer.parseInt(String.valueOf(num1));
+        int num2Int = Integer.parseInt(String.valueOf(num2));
+        System.out.println(num1Int);
+        System.out.println(num2Int);
     }
 }
