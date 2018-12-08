@@ -29,23 +29,23 @@ public class AddTwoNumber {
         }
     }
 
-    public static ListNode addTwoNumbers(ListNode l3, ListNode l4) {
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null;
         ListNode tail = null;
 
         int sum = 0;
-        while (l3 != null || l4 != null) {
-            int l3Val = 0;
-            int l4Val = 0;
-            if (l3 != null) {
-                l3Val = l3.getVal();
-                l3 = l3.getNext();
+        while (l1 != null || l2 != null) {
+            int l1Val = 0;
+            int l2Val = 0;
+            if (l1 != null) {
+                l1Val = l1.getVal();
+                l1 = l1.getNext();
             }
-            if (l4 != null) {
-                l4Val = l4.getVal();
-                l4 = l4.getNext();
+            if (l2 != null) {
+                l2Val = l2.getVal();
+                l2 = l2.getNext();
             }
-            sum += l3Val + l4Val;
+            sum += l1Val + l2Val;
 
             System.out.println("sum = " + sum);
 
@@ -64,6 +64,9 @@ public class AddTwoNumber {
                 tail.setNext(tmpNode);
                 tail = tmpNode;
             }
+        }
+        if (sum > 0) {
+            tail.setNext(new ListNode(sum));
         }
 
         return head;
