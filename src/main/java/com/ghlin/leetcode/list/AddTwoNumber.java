@@ -1,33 +1,9 @@
-package com.ghlin.leetcode;
+package com.ghlin.leetcode.list;
 
 /*
  * https://leetcode.com/problems/add-two-numbers/description/
  */
 public class AddTwoNumber {
-    public static class ListNode {
-        int val;
-        ListNode next = null;
-
-        public int getVal() {
-            return val;
-        }
-
-        public void setVal(int val) {
-            this.val = val;
-        }
-
-        public ListNode getNext() {
-            return next;
-        }
-
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-
-        public ListNode(int val) {
-            this.val = val;
-        }
-    }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null;
@@ -72,28 +48,7 @@ public class AddTwoNumber {
         return head;
     }
 
-    public static ListNode buildList(int[] nums) {
-        if (nums.length == 0) {
-            return new ListNode(0);
-        }
 
-        ListNode head = null;
-        ListNode lastNode = null;
-        int i = 0;
-
-        while (i < nums.length) {
-            ListNode newNode = new ListNode(nums[i]);
-            if (head == null) {
-                head = lastNode = newNode;
-            } else {
-                lastNode.next = newNode;
-                lastNode = newNode;
-            }
-            i++;
-        }
-
-        return head;
-    }
 
     public static void main(String[] args) {
 //        ListNode l1 = buildList(new int[] {1, 2, 3});

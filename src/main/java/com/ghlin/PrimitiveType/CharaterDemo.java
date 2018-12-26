@@ -27,5 +27,19 @@ public class CharaterDemo {
         int num2Int = Integer.parseInt(String.valueOf(num2));
         System.out.println(num1Int);
         System.out.println(num2Int);
+
+        System.out.println(char2LiteralInt('9'));
+        System.out.println(char2LiteralInt2('8'));
+    }
+
+    /**
+     * 将字符转换为
+     */
+    public static int char2LiteralInt(char c) {
+        return  Integer.valueOf(String.valueOf(c));
+    }
+
+    public static int char2LiteralInt2(char c) {
+        return c - '0';
     }
 }

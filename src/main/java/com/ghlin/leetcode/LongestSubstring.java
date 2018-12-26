@@ -7,31 +7,55 @@ import java.util.HashSet;
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  */
 public class LongestSubstring {
-    public int lengthOfLongestSubstring(String s) {
-        char[] ss = s.toCharArray();
-
+    public static int lengthOfLongestSubstring(String s) {
+        if (s.isEmpty()) {
+            return 0;
+        }
         HashSet<Character> notDupSet = new HashSet<>();
 
-        int subStrStart = 0;
-        int subStrEnd = 0;
-        int maxSize = 1;
+        int start = 0;
+        int end = 0;
+        int maxLen = 1;
 
-        for (int i = 0; i < ss.length; i++) {
+        // for loop
+        for (int i = 0; i < s.length(); i++) {
             notDupSet.clear();
-            notDupSet.add(ss[i]);
-            subStrStart = i;
-            subStrEnd = i;
-            for (int j = i + 1; j < ss.length; j++) {
-                if (notDupSet.contains(ss[i])) {
-                    maxSize++;
+            notDupSet.add(s.charAt(i));
+            for (int j = i + 1; j < s.length(); j++) {
+                if (notDupSet.contains(s.charAt(j))) {
+                    break;
                 } else {
-                    subStrEnd = j;
-                    maxSize++;
+                    if ((j - i + 1) > maxLen) {
+                        maxLen = j - i + 1;
+                        start = i;
+                        end = j;
+                    }
+                    notDupSet.add(s.charAt(j));
                 }
             }
         }
 
-        return 0;
+        System.out.println("start = " + start + ", end = " + end);
+        return maxLen;
+    }
+
+    public static int lengthOfLongestSubstringWithWhile(String s) {
+        int len = s.length();
+
+        HashSet<Character> notDupSet = new HashSet<>();
+        int maxLen = 0;
+        int i = 0;
+        int j = 0;
+        while (i < len && j < len) {
+            if (!notDupSet.contains(s.charAt(j))) {
+                notDupSet.add(s.charAt(j++));
+                maxLen = Math.max(maxLen, j - i);
+            } else {
+                notDupSet.remove(s.charAt(i++));
+            }
+        }
+        System.out.println("maxLen = " + maxLen);
+        return maxLen;
     }
 
 }
